@@ -24,10 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ServerActivity" />
         <activity android:name=".ContactPageActivity" />
-        <activity android:name=".InfoPage_Activity"/>
-        <activity android:name=".FooterActivity"/>
+        <activity android:name=".InfoPageActivity"/>
     </application>
 
 </manifest>

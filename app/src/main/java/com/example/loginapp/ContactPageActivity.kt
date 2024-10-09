@@ -30,7 +30,7 @@ class ContactPageActivity : AppCompatActivity() {
 
         }
         homePageButton.setOnClickListener {
-            val intent = Intent(this, InfoPage_Activity::class.java)
+            val intent = Intent(this, InfoPageActivity::class.java)
             startActivity(intent)
         }
         MenuButton.setOnClickListener {
