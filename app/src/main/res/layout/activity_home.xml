@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signuptitle"
+        android:text="Sign Up"
+        android:textSize="35dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_margin="45dp"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:hint="Username"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_corner"
+        android:padding="18dp"
+        android:inputType="text"
+        android:id="@+id/user_input"
+        android:drawableLeft="@drawable/baseline_person_24"
+        android:drawablePadding="20dp"
+        android:layout_marginBottom="20dp" />
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_input"
+        android:hint="Email"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_corner"
+        android:padding="18dp"
+        android:inputType="textEmailAddress"
+        android:id="@+id/user_email"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawablePadding="20dp"
+        android:layout_marginBottom="20dp" />
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_email"
+        android:hint="Password"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_corner"
+        android:padding="18dp"
+        android:inputType="textPassword"
+        android:id="@+id/user_password"
+        android:drawableLeft="@drawable/baseline_password_24"
+        android:drawablePadding="20dp"
+        android:layout_marginBottom="20dp" />
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_password"
+        android:hint="Confirm Password"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_corner"
+        android:padding="18dp"
+        android:inputType="textPassword"
+        android:id="@+id/user_conf_password"
+        android:drawableLeft="@drawable/baseline_password_24"
+        android:drawablePadding="20dp"
+        android:layout_marginBottom="20dp" />
+        />
+
+    <TextView
+        android:id="@+id/error_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:visibility="gone"
+        android:layout_below="@id/user_conf_password"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_conf_password"
+        android:hint="Phone Number"
+        android:maxLength="10"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_corner"
+        android:padding="18dp"
+        android:inputType="number|phone"
+        android:id="@+id/user_contact"
+        android:drawableLeft="@drawable/baseline_phone_24"
+        android:drawablePadding="20dp"
+        />
+    
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signupbtn"
+        android:text="Register"
+        android:textSize="23dp"
+        android:layout_below="@id/user_contact"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account?"
+        android:textColor="@color/black"
+        android:layout_below="@id/signupbtn"
+        android:textSize="18dp"
+        android:id="@+id/mssg"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click here to Login"
+        android:textSize="18dp"
+        android:layout_below="@id/mssg"
+        android:id="@+id/loginText"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:focusable="false"
+        />
+
+</RelativeLayout>

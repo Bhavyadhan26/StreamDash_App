@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LoginApp</string>
+    <string name="error_passwords_not_matching">Passwords do not match</string>
+    <string name="registration_successful">Registration Successful</string>
+    <string name="Server_Started"> "Server started on port 8080"</string>
+    <string name="Server_Failed"> "Failed to start server"</string>
+    <string name="Server_stopped"> "Server stopped"</string>
+
+
+</resources>
