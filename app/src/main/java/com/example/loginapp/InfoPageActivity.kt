@@ -6,12 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
-class InfoPage_Activity : AppCompatActivity() {
+class InfoPageActivity : AppCompatActivity() {
 
     private var backPressedOnce = false // Track if back is pressed once
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        HTTPServer(this)
         setContentView(R.layout.info_page) // Replace with your actual layout file name
 
         // Get the current date
@@ -22,6 +23,7 @@ class InfoPage_Activity : AppCompatActivity() {
         dateText.text = currentDate
     }
     override fun onBackPressed() {
+        super.onBackPressed();
         if (backPressedOnce) {
             finishAffinity() // This will close all activities and exit the app
             return

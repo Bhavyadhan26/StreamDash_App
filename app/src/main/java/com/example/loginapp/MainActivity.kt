@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         homePageButton.setOnClickListener {
-            val intent = Intent(this, InfoPage_Activity::class.java)
+            val intent = Intent(this, InfoPageActivity::class.java)
             startActivity(intent)
         }
         MenuButton.setOnClickListener {
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         OpenServerActivityButton.setOnClickListener {
-            val intent = Intent(this, ServerActivity::class.java)
+            val intent = Intent(this, InfoPageActivity::class.java)
             startActivity(intent)
         }
 
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             Log.i("Test Credentials", "Username: $username and Password : $password" )
 
            // Navigate to the new activity (HomeActivity)
-            val intent = Intent(this@MainActivity, InfoPage_Activity::class.java)
+            val intent = Intent(this@MainActivity, InfoPageActivity::class.java)
             startActivity(intent)
         }
     }
