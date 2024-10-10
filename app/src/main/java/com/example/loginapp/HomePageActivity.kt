@@ -6,14 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
-class InfoPageActivity : AppCompatActivity() {
+class HomePageActivity : AppCompatActivity() {
 
     private var backPressedOnce = false // Track if back is pressed once
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         HTTPServer(this)
-        setContentView(R.layout.info_page) // Replace with your actual layout file name
+        setContentView(R.layout.homepage) // Replace with your actual layout file name
 
         // Get the current date
         val currentDate = SimpleDateFormat("EEEE, MMMM d", Locale.getDefault()).format(Date())

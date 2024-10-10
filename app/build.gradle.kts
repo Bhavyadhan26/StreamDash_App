@@ -40,10 +40,6 @@ android {
 
 
 dependencies {
-//    implementation (androidx.appcompat:appcompat:1.6.1)
-//    implementation (androidx.core:core-ktx:1.10.1) // or latest version
-//    implementation(org.nanohttpd:nanohttpd:2.3.1)
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

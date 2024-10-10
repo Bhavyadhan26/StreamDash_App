@@ -2,7 +2,26 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.LoginApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Primary colors -->
+        <item name="colorPrimary">@color/sapphire</item>
+        <item name="colorOnPrimary">@color/text</item>
+
+        <!-- Secondary colors -->
+        <item name="colorSecondary">@color/peach</item>
+        <item name="colorOnSecondary">@color/text</item>
+
+        <!-- Background and surface colors -->
+        <item name="android:colorBackground">@color/base</item>
+        <item name="colorSurface">@color/surface0</item>
+        <item name="colorOnSurface">@color/text</item>
+
+        <!-- Text colors -->
+        <item name="android:textColor">@color/text</item>
+
+        <!-- Other UI element colors -->
+        <item name="colorError">@color/red</item>
+        <item name="colorOnError">@color/text</item>
     </style>
 
     <style name="Theme.LoginApp" parent="Base.Theme.LoginApp" />

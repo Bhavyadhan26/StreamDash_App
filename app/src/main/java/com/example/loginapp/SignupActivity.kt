@@ -1,6 +1,5 @@
 package com.example.loginapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -14,7 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.loginapp.R.id.main
 
-class HomeActivity : AppCompatActivity() {
+class SignupActivity : AppCompatActivity() {
 
     private lateinit var usernameInput: EditText
     lateinit var emailInput: EditText
@@ -26,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.signup)
 
         // Initialize views
         usernameInput = findViewById(R.id.user_input)
@@ -43,14 +42,6 @@ class HomeActivity : AppCompatActivity() {
 
         signupBtn.setOnClickListener {
             registerUser()
-        }
-
-        val loginText = findViewById<TextView>(R.id.loginText)  // Find the TextView
-
-        loginText.setOnClickListener {
-            // Navigate to the login page here
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
         }
 
         // Handle window insets

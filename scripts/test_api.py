@@ -2,7 +2,6 @@ import requests
 import time
 
 DELAY = 1
-
 sample_data = (
     ("Temperature", 10),
     ("Humidity", 20),

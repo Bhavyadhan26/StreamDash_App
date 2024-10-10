@@ -6,16 +6,9 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     lateinit var usernameInput:EditText
     lateinit var passwordInput:EditText
@@ -25,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.login)
 
         val contactUsButton: ImageButton = findViewById(R.id.contact_us)
         val homePageButton: ImageButton = findViewById(R.id.home_page)
@@ -42,15 +35,22 @@ class MainActivity : AppCompatActivity() {
 
         }
         homePageButton.setOnClickListener {
-            val intent = Intent(this, InfoPageActivity::class.java)
+            val intent = Intent(this, HomePageActivity::class.java)
             startActivity(intent)
         }
         MenuButton.setOnClickListener {
             val intent = Intent(this, ContactPageActivity::class.java)
             startActivity(intent)
         }
+//        val loginText = findViewById<TextView>(R.id.loginText)  // Find the TextView
+//
+//        loginText.setOnClickListener {
+//            // Navigate to the login page here
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//        }
         OpenServerActivityButton.setOnClickListener {
-            val intent = Intent(this, InfoPageActivity::class.java)
+            val intent = Intent(this, HomePageActivity::class.java)
             startActivity(intent)
         }
 
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             Log.i("Test Credentials", "Username: $username and Password : $password" )
 
            // Navigate to the new activity (HomeActivity)
-            val intent = Intent(this@MainActivity, InfoPageActivity::class.java)
+            val intent = Intent(this@LoginActivity, HomePageActivity::class.java)
             startActivity(intent)
         }
     }
