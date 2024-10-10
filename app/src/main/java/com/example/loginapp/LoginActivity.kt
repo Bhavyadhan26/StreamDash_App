@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -42,13 +43,14 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, ContactPageActivity::class.java)
             startActivity(intent)
         }
-//        val loginText = findViewById<TextView>(R.id.loginText)  // Find the TextView
-//
-//        loginText.setOnClickListener {
-//            // Navigate to the login page here
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-//        }
+
+        val SignUpText = findViewById<TextView>(R.id.SignUpText)  // Find the TextView
+
+        SignUpText.setOnClickListener {
+            // Navigate to the login page here
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
+        }
         OpenServerActivityButton.setOnClickListener {
             val intent = Intent(this, HomePageActivity::class.java)
             startActivity(intent)

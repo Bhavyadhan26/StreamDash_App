@@ -1,5 +1,6 @@
 package com.example.loginapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -42,6 +43,14 @@ class SignupActivity : AppCompatActivity() {
 
         signupBtn.setOnClickListener {
             registerUser()
+        }
+
+        val loginText = findViewById<TextView>(R.id.loginText)  // Find the TextView
+
+        loginText.setOnClickListener {
+            // Navigate to the login page here
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         // Handle window insets

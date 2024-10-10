@@ -31,6 +31,8 @@
             android:textSize="20sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"
+            android:drawableLeft="@drawable/baseline_person_24"
+            android:drawablePadding="20dp"
             android:inputType="text"
             android:id="@+id/user_input"/>
 
@@ -44,6 +46,8 @@
             android:textSize="20sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"
+            android:drawableLeft="@drawable/baseline_password_24"
+            android:drawablePadding="20dp"
             android:inputType="textPassword"
             android:id="@+id/password_input"/>
         
@@ -58,28 +62,29 @@
             android:textSize="20sp"
             android:id="@+id/login_btn"/>
 
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Don't have an account?"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:layout_below="@id/login_btn"-->
-<!--            android:textSize="18dp"-->
-<!--            android:id="@+id/mssg"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            />-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account with us?"
+            android:textColor="@color/black"
+            android:layout_below="@id/login_btn"
+            android:textSize="18dp"
+            android:id="@+id/mssg"
+            android:layout_centerHorizontal="true"
+            />
 
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Click here to SignUp"-->
-<!--            android:textSize="18dp"-->
-<!--            android:layout_below="@id/mssg"-->
-<!--            android:id="@+id/SignUpText"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:clickable="true"-->
-<!--            android:focusable="false"-->
-<!--            />-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click here to SignUp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_below="@id/mssg"
+            android:id="@+id/SignUpText"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:focusable="false"
+            />
 
         <Button
             android:id="@+id/openServerActivityButton"
