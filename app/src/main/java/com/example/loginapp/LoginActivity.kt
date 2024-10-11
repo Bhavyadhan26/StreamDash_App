@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -40,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
         MenuButton.setOnClickListener {
-            val intent = Intent(this, ContactPageActivity::class.java)
+            val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
 
@@ -65,10 +66,14 @@ class LoginActivity : AppCompatActivity() {
            // Navigate to the new activity (HomeActivity)
             val intent = Intent(this@LoginActivity, HomePageActivity::class.java)
             startActivity(intent)
+            loginUserNotify()
         }
     }
-    fun goToContactPage(view: android.view.View) {
-        val intent = Intent(this, ContactPageActivity::class.java)
+    fun goToProfilePage(view: android.view.View) {
+        val intent = Intent(this, ProfilePageActivity::class.java)
         startActivity(intent)
+    }
+    private fun loginUserNotify() {
+        Toast.makeText(this, getString(R.string.login_successful), Toast.LENGTH_LONG).show()
     }
 }

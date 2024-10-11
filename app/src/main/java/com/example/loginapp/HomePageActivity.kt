@@ -23,7 +23,6 @@ class HomePageActivity : AppCompatActivity() {
         dateText.text = currentDate
     }
     override fun onBackPressed() {
-        super.onBackPressed();
         if (backPressedOnce) {
             finishAffinity() // This will close all activities and exit the app
             return

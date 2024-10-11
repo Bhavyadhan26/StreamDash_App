@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".ContactPageActivity" />
         <activity android:name=".HomePageActivity"/>
+        <activity android:name=".MenuActivity"/>
+        <activity android:name=".ProfilePageActivity"/>
     </application>
 
 </manifest>

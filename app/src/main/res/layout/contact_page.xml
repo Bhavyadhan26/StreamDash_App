@@ -29,13 +29,7 @@
                     android:layout_height="24dp"
                     android:src="@drawable/baseline_arrow_back_ios_24" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:text="Menu"
-                    android:textColor="#DBD8E3"
-                    android:textSize="20sp" />
+
             </LinearLayout>
 
             <!-- Contact Us Title and Description -->

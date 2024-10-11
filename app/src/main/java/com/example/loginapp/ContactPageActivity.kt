@@ -34,7 +34,7 @@ class ContactPageActivity : AppCompatActivity() {
             startActivity(intent)
         }
         MenuButton.setOnClickListener {
-            val intent = Intent(this, ContactPageActivity::class.java)
+            val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
     }
