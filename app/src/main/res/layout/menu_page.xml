@@ -33,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Profile"
+        android:id="@+id/profile_btn"
         android:paddingTop="16dp"/>
 
     <TextView
@@ -45,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Logout"
+        android:id="@+id/logout_btn"
         android:paddingTop="16dp"/>
 
 
