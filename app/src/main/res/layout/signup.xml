@@ -14,14 +14,23 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_margin="45dp"
-
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="8dp"
         />
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@id/signuptitle"
+        android:contentDescription="User Icon"
+        android:layout_centerInParent="true"
+        android:src="@drawable/icon_account" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_below="@id/profile_image"
         android:hint="Username"
         android:textColor="@color/white"
         android:textColorHint="@color/white"

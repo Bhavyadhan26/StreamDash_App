@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
     android:gravity="center"
     android:padding="0dp"
     tools:context=".LoginActivity">
@@ -17,17 +16,21 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/profile_image"
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:src="@drawable/icon_account"/>
+            android:layout_marginBottom="8dp"
+            android:contentDescription="Profile Image"
+            android:src="@mipmap/ic_launcher_round"
+            android:scaleType="centerCrop" />
         
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:hint="Username"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+
+
             android:textSize="20sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"
@@ -41,8 +44,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="Password"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:textSize="20sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"
@@ -66,7 +67,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don't have an account with us?"
-            android:textColor="@color/black"
             android:layout_below="@id/login_btn"
             android:textSize="18dp"
             android:id="@+id/mssg"
@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:text="Click here to SignUp"
             android:textSize="18dp"
-            android:textColor="@color/black"
+
             android:layout_below="@id/mssg"
             android:id="@+id/SignUpText"
             android:layout_centerHorizontal="true"
@@ -90,6 +90,7 @@
             android:id="@+id/openServerActivityButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
             android:text="Open Server Activity" />
 
         <Button
@@ -97,6 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Profile Page"
+            android:backgroundTint="@color/green"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:onClick="goToProfilePage" />

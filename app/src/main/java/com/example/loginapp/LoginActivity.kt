@@ -64,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
             Log.i("Test Credentials", "Username: $username and Password : $password" )
 
            // Navigate to the new activity (HomeActivity)
-            val intent = Intent(this@LoginActivity, HomePageActivity::class.java)
+            val intent = Intent(this@LoginActivity, SignupActivity::class.java)
             startActivity(intent)
             loginUserNotify()
         }
