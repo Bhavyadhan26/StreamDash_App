@@ -22,7 +22,6 @@ class SignupActivity : AppCompatActivity() {
     lateinit var confirmPasswordInput: EditText
     lateinit var phoneInput: EditText
     private lateinit var signupBtn: MaterialButton
-    lateinit var errorText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +34,7 @@ class SignupActivity : AppCompatActivity() {
         confirmPasswordInput = findViewById(R.id.user_conf_password)
         phoneInput = findViewById(R.id.user_contact)
         signupBtn = findViewById(R.id.signupbtn)
-        errorText = findViewById(R.id.error_text)
+
 
         // Initially disable confirm password and signup button
         confirmPasswordInput.isEnabled = false
@@ -70,6 +69,7 @@ class SignupActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 val password = passwordInput.text.toString()
                 confirmPasswordInput.isEnabled = password.isNotEmpty()
+                validatePasswords()
                 validateFields()
             }
 
@@ -80,16 +80,7 @@ class SignupActivity : AppCompatActivity() {
         // Check password match in real-time
         confirmPasswordInput.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                val password = passwordInput.text.toString()
-                val confirmPassword = confirmPasswordInput.text.toString()
-                if (password != confirmPassword) {
-//                    errorText.text = "Passwords do not match"
-                    errorText.text = getString(R.string.error_passwords_not_matching)
-                    errorText.visibility = TextView.VISIBLE
-
-                } else {
-                    errorText.visibility = TextView.GONE
-                }
+                validatePasswords()
                 validateFields()
             }
 
@@ -127,6 +118,18 @@ class SignupActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+    }
+    private fun validatePasswords() {
+        val password = passwordInput.text.toString()
+        val confirmPassword = confirmPasswordInput.text.toString()
+
+        if (password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+            if (password != confirmPassword) {
+                confirmPasswordInput.error = getString(R.string.error_passwords_not_matching)
+            } else {
+                confirmPasswordInput.error = null // Clear the error
+            }
+        }
     }
 
     private fun validateFields() {

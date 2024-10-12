@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MenuActivity: AppCompatActivity() {
     private lateinit var profileTextView: TextView
+    private lateinit var settingsTextView: TextView
     private lateinit var logoutTextView: TextView
 
 
@@ -24,6 +25,11 @@ class MenuActivity: AppCompatActivity() {
         profileTextView = findViewById(R.id.profile_btn)
         profileTextView.setOnClickListener {
             val intent = Intent(this, ProfilePageActivity::class.java)
+            startActivity(intent)
+        }
+        settingsTextView = findViewById(R.id.settings_btn)
+        settingsTextView.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
         logoutTextView=findViewById(R.id.logout_btn)

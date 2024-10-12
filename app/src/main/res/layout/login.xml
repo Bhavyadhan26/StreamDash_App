@@ -29,8 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:hint="Username"
-
-
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:textSize="20sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"
@@ -47,13 +47,15 @@
             android:textSize="20sp"
             android:background="@drawable/rounded_corner"
             android:padding="18dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:drawableLeft="@drawable/baseline_password_24"
             android:drawablePadding="20dp"
             android:inputType="textPassword"
             android:id="@+id/password_input"/>
         
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text = "Login"
             android:backgroundTint="@color/white"

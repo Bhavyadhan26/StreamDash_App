@@ -35,6 +35,8 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:inputType="text"
@@ -42,7 +44,7 @@
         android:drawableLeft="@drawable/baseline_person_24"
         android:drawablePadding="20dp"
         android:layout_marginBottom="20dp" />
-        />
+
 
     <EditText
         android:layout_width="match_parent"
@@ -52,6 +54,8 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:inputType="textEmailAddress"
@@ -59,7 +63,7 @@
         android:drawableLeft="@drawable/baseline_email_24"
         android:drawablePadding="20dp"
         android:layout_marginBottom="20dp" />
-        />
+
 
     <EditText
         android:layout_width="match_parent"
@@ -69,6 +73,8 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:inputType="textPassword"
@@ -76,7 +82,7 @@
         android:drawableLeft="@drawable/baseline_password_24"
         android:drawablePadding="20dp"
         android:layout_marginBottom="20dp" />
-        />
+
 
     <EditText
         android:layout_width="match_parent"
@@ -86,6 +92,8 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:inputType="textPassword"
@@ -93,17 +101,7 @@
         android:drawableLeft="@drawable/baseline_password_24"
         android:drawablePadding="20dp"
         android:layout_marginBottom="20dp" />
-        />
 
-    <TextView
-        android:id="@+id/error_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:visibility="gone"
-        android:layout_below="@id/user_conf_password"
-        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="match_parent"
@@ -114,6 +112,8 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:inputType="number|phone"
