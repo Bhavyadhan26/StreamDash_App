@@ -2,12 +2,10 @@ package com.app.streamdash
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -61,19 +59,20 @@ class LoginActivity : AppCompatActivity() {
         {
             val username=usernameInput.text.toString()
             val password=passwordInput.text.toString()
-            Log.i("Test Credentials", "Username: $username and Password : $password" )
 
-           // Navigate to the new activity (HomeActivity)
-            val intent = Intent(this@LoginActivity, SignupActivity::class.java)
-            startActivity(intent)
-            loginUserNotify()
+            val user = Database.login(username, password)
+            if (user == null) {
+                loginBtn.error = "Invalid Credentials!"
+            } else {
+                // Navigate to the new activity (HomeActivity)
+                val intent = Intent(this@LoginActivity, HomePageActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
     fun goToProfilePage(view: android.view.View) {
         val intent = Intent(this, ProfilePageActivity::class.java)
         startActivity(intent)
     }
-    private fun loginUserNotify() {
-        Toast.makeText(this, getString(R.string.login_successful), Toast.LENGTH_LONG).show()
-    }
+
 }

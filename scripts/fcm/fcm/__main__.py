@@ -1,6 +1,7 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import messaging
+from firebase_admin import firestore
 
 
 sample_data = (
@@ -25,6 +26,10 @@ sample_data = (
 cred = credentials.Certificate("./service_account.json")
 app = firebase_admin.initialize_app(cred)
 
+username = "aman"
+store = firestore.client(app)
+doc = store.collection("users").document(username).get()
+token = doc.to_dict().get("deviceToken")
 
 # See documentation on defining a message payload.
 
@@ -34,7 +39,8 @@ for sensor, value in sample_data:
             "sensor": sensor,
             "value": str(value),
         },
-        topic="sensor",
+        # topic="sensor",
+        token=token,
     )
 
     # Send a message to the device corresponding to the provided

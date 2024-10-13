@@ -36,7 +36,6 @@ class HomePageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         fetchRegistrationToken()
-        subscribeSensorUpdates()
         setContentView(R.layout.homepage) // Replace with your actual layout file name
 
         SensorUpdateEvent.payload.observe(this, Observer<Payload> {payload -> this.onSensorUpdate(payload)})
@@ -66,10 +65,6 @@ class HomePageActivity : AppCompatActivity() {
                 return@OnCompleteListener
             }
 
-            // Get new FCM registration token
-            val token = task.result
-            Log.i(TAG, token)
-
         })
     }
     private fun subscribeSensorUpdates() {
@@ -84,7 +79,7 @@ class HomePageActivity : AppCompatActivity() {
             }
     }
 
-    fun onSensorUpdate(payload: Payload) {
+    private fun onSensorUpdate(payload: Payload) {
         val cards = this.findViewById<ViewGroup>(R.id.cardsLayout)
         val card: CardView
         val inflater = this.layoutInflater

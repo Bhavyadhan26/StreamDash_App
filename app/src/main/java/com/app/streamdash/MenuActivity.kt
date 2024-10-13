@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
 class MenuActivity: AppCompatActivity() {
     private lateinit var profileTextView: TextView
     private lateinit var settingsTextView: TextView
