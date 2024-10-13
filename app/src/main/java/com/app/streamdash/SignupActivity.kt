@@ -1,4 +1,4 @@
-package com.example.loginapp
+package com.app.streamdash
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,6 @@ import com.google.android.material.button.MaterialButton
 import android.widget.Toast
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.loginapp.R.id.main
 
 class SignupActivity : AppCompatActivity() {
 
@@ -22,7 +21,6 @@ class SignupActivity : AppCompatActivity() {
     lateinit var confirmPasswordInput: EditText
     lateinit var phoneInput: EditText
     private lateinit var signupBtn: MaterialButton
-    lateinit var errorText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +33,7 @@ class SignupActivity : AppCompatActivity() {
         confirmPasswordInput = findViewById(R.id.user_conf_password)
         phoneInput = findViewById(R.id.user_contact)
         signupBtn = findViewById(R.id.signupbtn)
-        errorText = findViewById(R.id.error_text)
+
 
         // Initially disable confirm password and signup button
         confirmPasswordInput.isEnabled = false
@@ -54,7 +52,7 @@ class SignupActivity : AppCompatActivity() {
         }
 
         // Handle window insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -70,6 +68,7 @@ class SignupActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 val password = passwordInput.text.toString()
                 confirmPasswordInput.isEnabled = password.isNotEmpty()
+                validatePasswords()
                 validateFields()
             }
 
@@ -80,16 +79,7 @@ class SignupActivity : AppCompatActivity() {
         // Check password match in real-time
         confirmPasswordInput.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                val password = passwordInput.text.toString()
-                val confirmPassword = confirmPasswordInput.text.toString()
-                if (password != confirmPassword) {
-//                    errorText.text = "Passwords do not match"
-                    errorText.text = getString(R.string.error_passwords_not_matching)
-                    errorText.visibility = TextView.VISIBLE
-
-                } else {
-                    errorText.visibility = TextView.GONE
-                }
+                validatePasswords()
                 validateFields()
             }
 
@@ -127,6 +117,18 @@ class SignupActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+    }
+    private fun validatePasswords() {
+        val password = passwordInput.text.toString()
+        val confirmPassword = confirmPasswordInput.text.toString()
+
+        if (password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+            if (password != confirmPassword) {
+                confirmPasswordInput.error = getString(R.string.error_passwords_not_matching)
+            } else {
+                confirmPasswordInput.error = null // Clear the error
+            }
+        }
     }
 
     private fun validateFields() {

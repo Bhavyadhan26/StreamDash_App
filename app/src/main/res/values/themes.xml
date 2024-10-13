@@ -3,25 +3,39 @@
     <style name="Base.Theme.LoginApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
 
-        <!-- Primary colors -->
-        <item name="colorPrimary">@color/sapphire</item>
-        <item name="colorOnPrimary">@color/text</item>
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/base</item>
+        <item name="colorPrimaryDark">@color/crust</item>
+        <item name="colorAccent">@color/overlay2</item>
 
-        <!-- Secondary colors -->
-        <item name="colorSecondary">@color/peach</item>
-        <item name="colorOnSecondary">@color/text</item>
+        <!-- Background Colors -->
+        <item name="android:windowBackground">@color/base</item>
+        <item name="android:colorBackground">@color/surface0</item>
 
-        <!-- Background and surface colors -->
-        <item name="android:colorBackground">@color/base</item>
-        <item name="colorSurface">@color/surface0</item>
-        <item name="colorOnSurface">@color/text</item>
-
-        <!-- Text colors -->
+        <!-- Text Colors -->
         <item name="android:textColor">@color/text</item>
+        <item name="android:textColorPrimary">@color/text</item>
+        <item name="android:textColorSecondary">@color/subtext0</item>
+        <item name="android:textColorHint">@color/overlay1</item>
 
-        <!-- Other UI element colors -->
-        <item name="colorError">@color/red</item>
-        <item name="colorOnError">@color/text</item>
+        <!-- Button Colors -->
+        <item name="colorButtonNormal">@color/blue</item>
+        <item name="android:colorError">@color/red</item>
+
+        <!-- Link/URL Colors -->
+        <item name="android:textColorLink">@color/blue</item>
+
+<!--        &lt;!&ndash; Success, Warnings, Errors &ndash;&gt;-->
+<!--        <item name="colorSuccess">@color/green</item>-->
+<!--        <item name="colorWarning">@color/yellow</item>-->
+<!--        <item name="colorError">@color/red</item>-->
+
+        <!-- Selection Background -->
+        <item name="android:colorActivatedHighlight">@color/overlay2</item>
+        <item name="android:colorControlHighlight">@color/overlay2</item>
+
+        <!-- Cursor -->
+        <item name="android:textCursorDrawable">@color/rosewater</item>
     </style>
 
     <style name="Theme.LoginApp" parent="Base.Theme.LoginApp" />
