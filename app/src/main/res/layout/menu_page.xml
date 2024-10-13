@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/background"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -16,39 +16,52 @@
         android:layout_gravity="end"
         android:layout_marginBottom="16dp"/>
 
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Menu"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/black"/>-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Menu"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:fontFamily="@font/abeezee"
+        android:paddingTop="16dp"
         android:text="Hey,Bhavya!\n"
-        android:paddingTop="16dp"/>
+        android:textColor="@color/base"
+        android:textSize="30dp" />
 
     <!-- Menu items -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile"
         android:id="@+id/profile_btn"
-        android:paddingTop="16dp"/>
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
+        android:fontFamily="@font/bagel_fat_one"
+        android:paddingTop="16dp"
+        android:text="Profile"
+        android:textColor="@color/black"
+        android:textSize="35dp" />
+
+    <TextView
         android:id="@+id/settings_btn"
-        android:paddingTop="16dp"/>
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
+        android:fontFamily="@font/bagel_fat_one"
+        android:paddingTop="16dp"
+        android:text="Settings"
+        android:textColor="@color/black"
+        android:textSize="35dp" />
+
+    <TextView
         android:id="@+id/logout_btn"
-        android:paddingTop="16dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bagel_fat_one"
+        android:paddingTop="16dp"
+        android:text="Logout"
+        android:textColor="@color/black"
+        android:textSize="35dp" />
 
 
 </LinearLayout>

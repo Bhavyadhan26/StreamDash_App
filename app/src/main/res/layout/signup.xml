@@ -3,7 +3,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background">
+    android:background="@drawable/background"
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -11,7 +12,7 @@
         android:id="@+id/signuptitle"
         android:text="Sign Up"
         android:textSize="35dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_marginTop="30dp"
