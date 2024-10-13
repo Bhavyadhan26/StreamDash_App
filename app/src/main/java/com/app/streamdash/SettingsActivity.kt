@@ -1,4 +1,4 @@
-package com.example.loginapp
+package com.app.streamdash
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Switch

@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:text="Click here to SignUp"
             android:textSize="18dp"
-            android:textColor="@color/black"
+
             android:layout_below="@id/mssg"
             android:id="@+id/SignUpText"
             android:layout_centerHorizontal="true"

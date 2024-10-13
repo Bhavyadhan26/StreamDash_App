@@ -1,4 +1,4 @@
-package com.example.loginapp
+package com.app.streamdash
 
 import android.content.Intent
 import android.os.Bundle

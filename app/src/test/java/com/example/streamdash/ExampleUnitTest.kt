@@ -1,4 +1,4 @@
-package com.example.loginapp
+package com.example.streamdash
 
 import org.junit.Test
 

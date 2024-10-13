@@ -1,4 +1,4 @@
-package com.example.loginapp
+package com.app.streamdash
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,6 @@ import com.google.android.material.button.MaterialButton
 import android.widget.Toast
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.loginapp.R.id.main
 
 class SignupActivity : AppCompatActivity() {
 
@@ -53,7 +52,7 @@ class SignupActivity : AppCompatActivity() {
         }
 
         // Handle window insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
