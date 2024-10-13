@@ -158,6 +158,8 @@ class SignupActivity : AppCompatActivity() {
                 token
             )
             LoggedInUser.user.postValue(user)
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -83,6 +83,7 @@ object Database {
         val password = User.hashPassword(rawPassword)
         val user = getUser(username)
         if (user != null && user.password == password) {
+            LoggedInUser.user.postValue(user)
             return user
         }
         return null

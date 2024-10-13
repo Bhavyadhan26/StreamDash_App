@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9F9FB"
+    android:background="@drawable/background"
     android:padding="16dp">
 
     <!-- Header Section -->
@@ -14,9 +14,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/gradient_background"
         android:padding="25dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- Date Text -->
         <TextView
@@ -25,30 +25,32 @@
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Welcome Text -->
         <TextView
             android:id="@+id/welcomeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:text="SensorArray Readings"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:layout_marginTop="4dp"
-            app:layout_constraintTop_toBottomOf="@id/dateText"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Scrollable Grid Layout -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fillViewport="true"
-        android:padding="25dp"
+        android:padding="50dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerLayout">
 
@@ -56,10 +58,16 @@
             android:id="@+id/cardsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="100dp"
             app:alignContent="flex_start"
             app:alignItems="flex_start"
             app:flexDirection="row"
             app:flexWrap="wrap" />
     </ScrollView>
+
+    <include
+        android:id="@+id/footer"
+        layout="@layout/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 </androidx.constraintlayout.widget.ConstraintLayout>
