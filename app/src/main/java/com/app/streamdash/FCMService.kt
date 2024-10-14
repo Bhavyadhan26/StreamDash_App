@@ -25,6 +25,7 @@ public class FCMService : FirebaseMessagingService() {
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)
+        Database.updateToken(token)
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {

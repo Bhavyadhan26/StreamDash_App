@@ -8,16 +8,37 @@
     android:layout_rowWeight="1"
     app:cardCornerRadius="16dp"
     app:cardElevation="8dp"
+    android:background="@color/surface2"
+    android:orientation="vertical"
     >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
         <TextView
-            android:id="@+id/textView"
-            android:textColor="#000000"
+            android:id="@+id/Sensor"
+            android:textColor="@color/text"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="start"
             android:orientation="vertical"
             android:padding="16dp"
+            android:background="@color/surface0"
             android:text="" />
+        <TextView
+            android:id="@+id/SensorValue"
+            android:textColor="@color/text"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/surface0"
+            android:text="" />
+        </LinearLayout>
 </androidx.cardview.widget.CardView>

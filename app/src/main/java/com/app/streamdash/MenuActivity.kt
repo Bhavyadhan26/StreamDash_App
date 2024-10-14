@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
 class MenuActivity: AppCompatActivity() {
     private lateinit var profileTextView: TextView
     private lateinit var settingsTextView: TextView
@@ -16,6 +15,11 @@ class MenuActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.menu_page)
+
+        val user = LoggedInUser.user.value!!
+
+        findViewById<TextView>(R.id.MenuWelcomeUser).text =
+            getString(R.string.hello_there, user.username)
 
         // Set up the close button to finish the activity and return to the previous screen
         val closeButton: View = findViewById(R.id.close_button)
@@ -34,6 +38,7 @@ class MenuActivity: AppCompatActivity() {
         }
         logoutTextView=findViewById(R.id.logout_btn)
         logoutTextView.setOnClickListener{
+            LoggedInUser.user.postValue(null)
             Toast.makeText(this, getString(R.string.logout_successful), Toast.LENGTH_LONG).show()
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -41,6 +46,7 @@ class MenuActivity: AppCompatActivity() {
     }
     // Handle back button press to finish the activity
     override fun onBackPressed() {
+        super.onBackPressed()
         finish() // Close this activity
     }
 }

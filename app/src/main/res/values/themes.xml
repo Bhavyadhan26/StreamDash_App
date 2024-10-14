@@ -36,6 +36,7 @@
 
         <!-- Cursor -->
         <item name="android:textCursorDrawable">@color/rosewater</item>
+
     </style>
 
     <style name="Theme.LoginApp" parent="Base.Theme.LoginApp" />

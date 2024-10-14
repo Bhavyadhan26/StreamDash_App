@@ -9,9 +9,9 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
-import android.widget.Toast
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.messaging.FirebaseMessaging
 
 class SignupActivity : AppCompatActivity() {
 
@@ -19,7 +19,6 @@ class SignupActivity : AppCompatActivity() {
     lateinit var emailInput: EditText
     lateinit var passwordInput: EditText
     lateinit var confirmPasswordInput: EditText
-    lateinit var phoneInput: EditText
     private lateinit var signupBtn: MaterialButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +30,6 @@ class SignupActivity : AppCompatActivity() {
         emailInput = findViewById(R.id.user_email)
         passwordInput = findViewById(R.id.user_password)
         confirmPasswordInput = findViewById(R.id.user_conf_password)
-        phoneInput = findViewById(R.id.user_contact)
         signupBtn = findViewById(R.id.signupbtn)
 
 
@@ -63,6 +61,25 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun setupValidationListeners() {
+
+
+        usernameInput.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val username = usernameInput.text.toString()
+                val user = Database.getUser(username)
+                if (user != null) {
+                    usernameInput.error = "This username is taken!"
+                } else {
+                    usernameInput.error = null
+                }
+            }
+
+        })
+
+
         // Enable confirm password field only after password is filled
         passwordInput.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -87,20 +104,6 @@ class SignupActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        // Limit phone number to 10 digits
-        phoneInput.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                if (s?.length == 10) {
-                    phoneInput.error = null
-                } else {
-                    phoneInput.error = "Phone number must be 10 digits"
-                }
-                validateFields()
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-        })
 
         // Validate email format
         emailInput.addTextChangedListener(object : TextWatcher {
@@ -135,11 +138,10 @@ class SignupActivity : AppCompatActivity() {
         val isEmailValid = isValidEmail(emailInput.text.toString())
         val isPasswordValid = passwordInput.text.toString().isNotEmpty() &&
                 passwordInput.text.toString() == confirmPasswordInput.text.toString()
-        val isPhoneValid = phoneInput.text.toString().length == 10
         val isUsernameValid = usernameInput.text.toString().isNotEmpty()
 
         // Enable signup button only if all fields are valid
-        signupBtn.isEnabled = isEmailValid && isPasswordValid && isPhoneValid && isUsernameValid
+        signupBtn.isEnabled = isEmailValid && isPasswordValid && isUsernameValid
     }
 
     // Function to validate email format
@@ -148,7 +150,16 @@ class SignupActivity : AppCompatActivity() {
     }
     // Function to handle registration logic
     private fun registerUser() {
-//        Toast.makeText(this, "Registration Successful", Toast.LENGTH_LONG).show()
-        Toast.makeText(this, getString(R.string.registration_successful), Toast.LENGTH_LONG).show()
+        FirebaseMessaging.getInstance().token.addOnSuccessListener { token ->
+            val user = Database.insertUser(
+                usernameInput.text.toString(),
+                emailInput.text.toString(),
+                passwordInput.text.toString(),
+                token
+            )
+            LoggedInUser.user.postValue(user)
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -22,46 +22,46 @@
 <!--        android:text="Menu"-->
 <!--        android:textSize="24sp"-->
 <!--        android:textStyle="bold"-->
-<!--        android:textColor="@color/black"/>-->
+<!--        android:textColor="@color/base"/>-->
     <TextView
+        android:id="@+id/MenuWelcomeUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/abeezee"
-        android:paddingTop="16dp"
-        android:text="Hey,Bhavya!\n"
-        android:textColor="@color/base"
-        android:textSize="30dp" />
+        android:paddingBottom="70dp"
+        android:text="@string/welcomeUser"
+        android:textColor="@color/text"
+        android:textSize="35sp" />
 
     <!-- Menu items -->
     <TextView
         android:id="@+id/profile_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/bagel_fat_one"
-        android:paddingTop="16dp"
+        android:fontFamily="@font/space_mono"
         android:text="Profile"
-        android:textColor="@color/black"
-        android:textSize="35dp" />
+        android:textColor="@color/rosewater"
+        android:textSize="32sp" />
 
     <TextView
         android:id="@+id/settings_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/bagel_fat_one"
+        android:fontFamily="@font/space_mono"
         android:paddingTop="16dp"
         android:text="Settings"
-        android:textColor="@color/black"
-        android:textSize="35dp" />
+        android:textColor="@color/rosewater"
+        android:textSize="32sp" />
 
     <TextView
         android:id="@+id/logout_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/bagel_fat_one"
+        android:fontFamily="@font/space_mono"
         android:paddingTop="16dp"
         android:text="Logout"
-        android:textColor="@color/black"
-        android:textSize="35dp" />
+        android:textColor="@color/rosewater"
+        android:textSize="32sp" />
 
 
 </LinearLayout>
