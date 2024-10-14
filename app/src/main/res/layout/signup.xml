@@ -104,13 +104,15 @@
         android:layout_marginBottom="20dp" />
 
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/signupbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/user_conf_password"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/crust"
         android:text="Register"
         android:textSize="23dp" />
 
@@ -118,7 +120,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Already have an account?"
-        android:textColor="@color/text"
+        android:textColor="@color/teal"
         android:layout_below="@id/signupbtn"
         android:textSize="18dp"
         android:id="@+id/mssg"
@@ -129,7 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Click here to Login"
-        android:textColor="@color/text"
+        android:textColor="@color/sky"
         android:textSize="18dp"
         android:layout_below="@id/mssg"
         android:id="@+id/loginText"

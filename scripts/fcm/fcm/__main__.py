@@ -26,7 +26,7 @@ sample_data = (
 cred = credentials.Certificate("./service_account.json")
 app = firebase_admin.initialize_app(cred)
 
-username = "test"
+username = "aman"
 store = firestore.client(app)
 doc = store.collection("users").document(username).get()
 token = doc.to_dict().get("deviceToken")
