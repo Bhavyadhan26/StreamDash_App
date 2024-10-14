@@ -26,11 +26,10 @@ sample_data = (
 cred = credentials.Certificate("./service_account.json")
 app = firebase_admin.initialize_app(cred)
 
-username = "aman"
+username = "test"
 store = firestore.client(app)
 doc = store.collection("users").document(username).get()
 token = doc.to_dict().get("deviceToken")
-
 # See documentation on defining a message payload.
 
 for sensor, value in sample_data:

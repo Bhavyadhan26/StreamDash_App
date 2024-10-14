@@ -93,8 +93,9 @@ class HomePageActivity : AppCompatActivity() {
             if (!task.isSuccessful) {
                 Log.w(TAG, "Fetching FCM registration token failed", task.exception)
                 return@OnCompleteListener
+            } else {
+                Database.updateToken(task.result)
             }
-
         })
     }
     private fun subscribeSensorUpdates() {
